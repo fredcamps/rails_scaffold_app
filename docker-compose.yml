@@ -24,7 +24,7 @@ services:
       - DB_HOST=database
       - DB_NAME=application
       - DB_USER=application
-      - DB_PASSWORD=P@ssw0rd!
+      - DB_PASSWORD=P@ssw0rd
       - DB_ADAPTER=postgresql
     depends_on:
       - database
