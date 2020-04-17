@@ -2,7 +2,7 @@
 require "resolv"
 
 class Ip < ApplicationRecord
-  has_and_belongs_to_many: hostnames
+  has_and_belongs_to_many :hostnames
   validates :address,
             presence: true,
             uniqueness: true,
