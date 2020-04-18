@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_04_17_055001) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "hostnames", force: :cascade do |t|
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
@@ -19,8 +22,10 @@ ActiveRecord::Schema.define(version: 2020_04_17_055001) do
   end
 
   create_table "hostnames_ips", id: false, force: :cascade do |t|
-    t.integer "ip_id", null: false
-    t.integer "hostname_id", null: false
+    t.bigint "ip_id", null: false
+    t.bigint "hostname_id", null: false
+    t.index ["hostname_id", "ip_id"], name: "index_hostnames_ips_on_hostname_id_and_ip_id", unique: true
+    t.index ["ip_id", "hostname_id"], name: "index_hostnames_ips_on_ip_id_and_hostname_id", unique: true
   end
 
   create_table "ips", force: :cascade do |t|
