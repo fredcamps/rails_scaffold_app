@@ -22,8 +22,16 @@ class Api::V1::DnsRecordsControllerTest < ActionDispatch::IntegrationTest
     assert_equal expected_result, JSON.parse(body)
   end
 
-  # test 'should_retrieve_http_' do;
-  # end
+  test 'should_retrieve_http_200_code_when_get_an_empty_result' do;
+    get '/api/v1/dns_records/1?include=sharklasers.com&exclude=sit.com'
+    expected_result = {
+      'total_records' => 0,
+      'records' => [],
+      'related_hostnames' => []
+    }
+    assert_equal 200, status
+    assert_equal expected_result, JSON.parse(body)
+  end
 
   test 'should_retrieve_http_201_status_code' do
     post '/api/v1/dns_records/',
