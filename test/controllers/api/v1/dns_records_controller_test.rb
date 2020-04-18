@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-
-require 'byebug'
 require 'json'
 require 'test_helper'
 
@@ -58,5 +56,15 @@ class Api::V1::DnsRecordsControllerTest < ActionDispatch::IntegrationTest
                                                       { 'hostname' => 'sit.com' }] }
          }
     assert_equal 409, status
+  end
+
+  test 'should_retrieve_bad_request_status' do
+    post '/api/v1/dns_records',
+         params: { 'dns_records': { 'ip' => '7.7.7.7',
+                                    'hostnames_attributes' => [{'hostname' => nil}]}}
+    assert_equal 400, status
+    post '/api/v1/dns_records',
+         params: { 'dns_records': nil}
+    assert_equal 400, status
   end
 end

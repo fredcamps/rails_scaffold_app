@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'byebug'
 module Api
   module V1
     class DnsRecordsController < ApplicationController
@@ -70,9 +69,12 @@ module Api
           end
           response_body = { 'id' => ip.id }
           status_code = 201
-        rescue StandardError
+        rescue ActiveRecord::RecordNotUnique
           response_body = { 'error'=> 'The item(s) is already saved' }
           status_code = 409
+        rescue ActiveRecord::RecordInvalid, NoMethodError
+          response_body = { 'error'=> 'Malformed data header' }
+          status_code = 400
         end
         render json: response_body, status: status_code
       end
