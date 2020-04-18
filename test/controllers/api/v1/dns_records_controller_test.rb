@@ -22,7 +22,12 @@ class Api::V1::DnsRecordsControllerTest < ActionDispatch::IntegrationTest
     assert_equal expected_result, JSON.parse(body)
   end
 
-  test 'should_retrieve_http_200_code_when_get_an_empty_result' do;
+  test 'should_retrieve_http_200_code_withou_query_string_params' do
+    get '/api/v1/dns_records/1'
+    assert_equal 200, status
+  end
+
+  test 'should_retrieve_http_200_code_when_get_an_empty_result' do
     get '/api/v1/dns_records/1?include=sharklasers.com&exclude=sit.com'
     expected_result = {
       'total_records' => 0,
