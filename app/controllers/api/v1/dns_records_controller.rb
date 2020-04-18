@@ -35,7 +35,7 @@ module Api
         records = []
         related_hostnames = []
         hostnames = []
-        data = Ip.find_by_sql "#{sql} where #{where_clause}"
+        data = Ip.find_by_sql "#{sql} WHERE #{where_clause}"
         data.each do |record|
           records << { 'id' => record.ip_id, 'ip_address' => record.ip_address }
           hostnames += record.hostnames_addresses
