@@ -1,15 +1,20 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 one:
+  id: 1
   address: lorem.com
 
 two:
+  id: 2
   address: ipsum.com
 
 three:
+  id: 3
   address: dolor.com
 
 four:
+  id: 4
   address: amet.com
 
 five:
+  id: 5
   address: sit.com

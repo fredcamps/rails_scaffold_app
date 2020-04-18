@@ -1,0 +1,55 @@
+one:
+  ip_id: 1
+  hostname_id: 1
+
+two:
+  ip_id: 1
+  hostname_id: 2
+
+three:
+  ip_id: 1
+  hostname_id: 3
+
+four:
+  ip_id: 1
+  hostname_id: 4
+
+five:
+  ip_id: 2
+  hostname_id: 2
+
+six:
+  ip_id: 3
+  hostname_id: 2
+
+seven:
+  ip_id: 3
+  hostname_id: 3
+
+eight:
+  ip_id: 3
+  hostname_id: 4
+
+nine:
+  ip_id: 4
+  hostname_id: 2
+
+ten:
+  ip_id: 4
+  hostname_id: 3
+
+eleven:
+  ip_id: 4
+  hostname_id: 5
+
+twelve:
+  ip_id: 4
+  hostname_id: 4
+
+thirteen:
+  ip_id: 5
+  hostname_id: 3
+
+fourteen:
+  ip_id: 5
+  hostname_id: 5
