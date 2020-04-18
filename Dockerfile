@@ -3,7 +3,8 @@ RUN apk update && apk add nodejs \
         postgresql-dev \
         g++ \
         make \
-        libpq
+        libpq \
+        sqlite-dev
 RUN mkdir /app
 WORKDIR /app
 COPY Gemfile /app/Gemfile
