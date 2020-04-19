@@ -1,0 +1,5 @@
+{
+  "dns_records": {"ip": "6.6.6.6",
+                  "hostnames_attributes": [{ "hostname": "dolor.com" },
+                                           { "hostname": "sit.com" }] }
+}
