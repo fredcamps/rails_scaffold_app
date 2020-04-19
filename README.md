@@ -12,10 +12,7 @@ Run this command bellow and wait for all services be loaded
 ```
 docker-compose up
 ```
-When all services loaded, send to backgroup or open another terminal window
-
-* Database creation
-Already created inside database container
+* When all services loaded, send to backgroup or open another terminal window
 
 * Database initialization
 ```
@@ -28,16 +25,13 @@ docker-compose run --rm app sh -c 'rails db:migrate RAILS_ENV=test'
 docker-compose run --rm app sh -c 'rails test'
 ```
 
-* Services
-postgres:12.2 as database
-puma as app server
+* Services: postgres:12.2 as database, puma as app server
 
-* Application usage example
-Save new DNS record
+* Application usage example: Save new DNS record
 ```
 curl -d '@payload.json' -H "Accept: application/json" -H "Content-Type: application/json" -X POST "http://localhost:3000/api/v1/dns_records"
-``
-Search for dns records
+```
+* Application usage example: Search for DNS record
 ```
 curl -H "Accept: application/json" -H "Content-Type: application/json" -X GET "http://localhost:3000/api/v1/dns_records/1?include=dolor.com,ipsum.com&exclude=sit.com""
 ```
